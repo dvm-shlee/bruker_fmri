@@ -31,7 +31,7 @@ setup(name='bruker-fmri',
                         'pyqtgraph'],
       entry_points={
           'console_scripts': [
-              # 'brkraw=brkraw.scripts.brkraw:main',
+              'brk-fmri=brkfmri.gui.main_win:main',
           ],
       },
       classifiers=[
