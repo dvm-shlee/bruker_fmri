@@ -1,0 +1,22 @@
+Metadata-Version: 1.2
+Name: bruker-fmri
+Version: 0.0.1.dev1
+Summary: Python-based online fMRI analysis tool for Bruker preclinical MRI scanner
+Home-page: https://github.com/dvm-shlee/brk-fmri
+Author: SungHo Lee
+Author-email: shleeh@unc.edu
+License: GNLv3
+Description: UNKNOWN
+Keywords: bruker data_handler converter administrator_tool
+Platform: UNKNOWN
+Classifier: Development Status :: 1 - Planning
+Classifier: Environment :: X11 Applications :: Qt
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Natural Language :: English
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Operating System :: MacOS
+Classifier: Operating System :: Microsoft :: Windows :: Windows 10
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Topic :: Scientific/Engineering :: Information Analysis
+Classifier: Topic :: Scientific/Engineering :: Medical Science Apps.
+Requires-Python: >3.5, <3.8

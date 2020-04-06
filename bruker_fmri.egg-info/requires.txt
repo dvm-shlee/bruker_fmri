@@ -1,0 +1,4 @@
+numpy
+shleeh
+bruker
+PySide2

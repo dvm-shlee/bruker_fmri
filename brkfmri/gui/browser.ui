@@ -1,0 +1,1404 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>data_browser</class>
+ <widget class="QWidget" name="data_browser">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1412</width>
+    <height>817</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>0</width>
+    <height>0</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>4000</width>
+    <height>4000</height>
+   </size>
+  </property>
+  <property name="font">
+   <font>
+    <family>Arial</family>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout_8">
+   <item row="0" column="0" colspan="2">
+    <widget class="QFrame" name="image_frame">
+     <property name="autoFillBackground">
+      <bool>true</bool>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <property name="lineWidth">
+      <number>0</number>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_4">
+      <item row="1" column="0">
+       <layout class="QGridLayout" name="gridLayout">
+        <item row="1" column="0">
+         <widget class="QLabel" name="sagittalS_label">
+          <property name="minimumSize">
+           <size>
+            <width>20</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="palette">
+           <palette>
+            <active>
+             <colorrole role="WindowText">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>171</red>
+                <green>171</green>
+                <blue>171</blue>
+               </color>
+              </brush>
+             </colorrole>
+            </active>
+            <inactive>
+             <colorrole role="WindowText">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>171</red>
+                <green>171</green>
+                <blue>171</blue>
+               </color>
+              </brush>
+             </colorrole>
+            </inactive>
+            <disabled>
+             <colorrole role="WindowText">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>120</red>
+                <green>120</green>
+                <blue>120</blue>
+               </color>
+              </brush>
+             </colorrole>
+            </disabled>
+           </palette>
+          </property>
+          <property name="font">
+           <font>
+            <family>Arial</family>
+            <pointsize>8</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>**S**</string>
+          </property>
+          <property name="textFormat">
+           <enum>Qt::MarkdownText</enum>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QLabel" name="sagittalA_label">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>20</height>
+           </size>
+          </property>
+          <property name="palette">
+           <palette>
+            <active>
+             <colorrole role="WindowText">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>171</red>
+                <green>171</green>
+                <blue>171</blue>
+               </color>
+              </brush>
+             </colorrole>
+            </active>
+            <inactive>
+             <colorrole role="WindowText">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>171</red>
+                <green>171</green>
+                <blue>171</blue>
+               </color>
+              </brush>
+             </colorrole>
+            </inactive>
+            <disabled>
+             <colorrole role="WindowText">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>120</red>
+                <green>120</green>
+                <blue>120</blue>
+               </color>
+              </brush>
+             </colorrole>
+            </disabled>
+           </palette>
+          </property>
+          <property name="font">
+           <font>
+            <family>Arial</family>
+            <pointsize>8</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>**A**</string>
+          </property>
+          <property name="textFormat">
+           <enum>Qt::MarkdownText</enum>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignBottom|Qt::AlignHCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="2">
+         <widget class="QLabel" name="sagittalI_label">
+          <property name="minimumSize">
+           <size>
+            <width>20</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="palette">
+           <palette>
+            <active>
+             <colorrole role="WindowText">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>171</red>
+                <green>171</green>
+                <blue>171</blue>
+               </color>
+              </brush>
+             </colorrole>
+            </active>
+            <inactive>
+             <colorrole role="WindowText">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>171</red>
+                <green>171</green>
+                <blue>171</blue>
+               </color>
+              </brush>
+             </colorrole>
+            </inactive>
+            <disabled>
+             <colorrole role="WindowText">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>120</red>
+                <green>120</green>
+                <blue>120</blue>
+               </color>
+              </brush>
+             </colorrole>
+            </disabled>
+           </palette>
+          </property>
+          <property name="font">
+           <font>
+            <family>Arial</family>
+            <pointsize>8</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>**I**</string>
+          </property>
+          <property name="textFormat">
+           <enum>Qt::MarkdownText</enum>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="1">
+         <widget class="QLabel" name="sagittalP_label">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>20</height>
+           </size>
+          </property>
+          <property name="palette">
+           <palette>
+            <active>
+             <colorrole role="WindowText">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>171</red>
+                <green>171</green>
+                <blue>171</blue>
+               </color>
+              </brush>
+             </colorrole>
+            </active>
+            <inactive>
+             <colorrole role="WindowText">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>171</red>
+                <green>171</green>
+                <blue>171</blue>
+               </color>
+              </brush>
+             </colorrole>
+            </inactive>
+            <disabled>
+             <colorrole role="WindowText">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>120</red>
+                <green>120</green>
+                <blue>120</blue>
+               </color>
+              </brush>
+             </colorrole>
+            </disabled>
+           </palette>
+          </property>
+          <property name="font">
+           <font>
+            <family>Arial</family>
+            <pointsize>8</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>**P**</string>
+          </property>
+          <property name="textFormat">
+           <enum>Qt::MarkdownText</enum>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignHCenter|Qt::AlignTop</set>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QGraphicsView" name="sagittal_view">
+          <property name="minimumSize">
+           <size>
+            <width>400</width>
+            <height>400</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>400</width>
+            <height>400</height>
+           </size>
+          </property>
+          <property name="palette">
+           <palette>
+            <active>
+             <colorrole role="Base">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>0</red>
+                <green>0</green>
+                <blue>0</blue>
+               </color>
+              </brush>
+             </colorrole>
+            </active>
+            <inactive>
+             <colorrole role="Base">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>0</red>
+                <green>0</green>
+                <blue>0</blue>
+               </color>
+              </brush>
+             </colorrole>
+            </inactive>
+            <disabled>
+             <colorrole role="Base">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>0</red>
+                <green>0</green>
+                <blue>0</blue>
+               </color>
+              </brush>
+             </colorrole>
+            </disabled>
+           </palette>
+          </property>
+          <property name="lineWidth">
+           <number>0</number>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item row="1" column="1">
+       <layout class="QGridLayout" name="gridLayout_2">
+        <item row="1" column="0">
+         <widget class="QLabel" name="axialL_label">
+          <property name="minimumSize">
+           <size>
+            <width>20</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="palette">
+           <palette>
+            <active>
+             <colorrole role="WindowText">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>171</red>
+                <green>171</green>
+                <blue>171</blue>
+               </color>
+              </brush>
+             </colorrole>
+            </active>
+            <inactive>
+             <colorrole role="WindowText">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>171</red>
+                <green>171</green>
+                <blue>171</blue>
+               </color>
+              </brush>
+             </colorrole>
+            </inactive>
+            <disabled>
+             <colorrole role="WindowText">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>120</red>
+                <green>120</green>
+                <blue>120</blue>
+               </color>
+              </brush>
+             </colorrole>
+            </disabled>
+           </palette>
+          </property>
+          <property name="font">
+           <font>
+            <family>Arial</family>
+            <pointsize>8</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>**L**</string>
+          </property>
+          <property name="textFormat">
+           <enum>Qt::MarkdownText</enum>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QLabel" name="axialA_label">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>20</height>
+           </size>
+          </property>
+          <property name="palette">
+           <palette>
+            <active>
+             <colorrole role="WindowText">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>171</red>
+                <green>171</green>
+                <blue>171</blue>
+               </color>
+              </brush>
+             </colorrole>
+            </active>
+            <inactive>
+             <colorrole role="WindowText">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>171</red>
+                <green>171</green>
+                <blue>171</blue>
+               </color>
+              </brush>
+             </colorrole>
+            </inactive>
+            <disabled>
+             <colorrole role="WindowText">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>120</red>
+                <green>120</green>
+                <blue>120</blue>
+               </color>
+              </brush>
+             </colorrole>
+            </disabled>
+           </palette>
+          </property>
+          <property name="font">
+           <font>
+            <family>Arial</family>
+            <pointsize>8</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>**A**</string>
+          </property>
+          <property name="textFormat">
+           <enum>Qt::MarkdownText</enum>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignBottom|Qt::AlignHCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="2">
+         <widget class="QLabel" name="axialR_label">
+          <property name="minimumSize">
+           <size>
+            <width>20</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="palette">
+           <palette>
+            <active>
+             <colorrole role="WindowText">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>171</red>
+                <green>171</green>
+                <blue>171</blue>
+               </color>
+              </brush>
+             </colorrole>
+            </active>
+            <inactive>
+             <colorrole role="WindowText">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>171</red>
+                <green>171</green>
+                <blue>171</blue>
+               </color>
+              </brush>
+             </colorrole>
+            </inactive>
+            <disabled>
+             <colorrole role="WindowText">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>120</red>
+                <green>120</green>
+                <blue>120</blue>
+               </color>
+              </brush>
+             </colorrole>
+            </disabled>
+           </palette>
+          </property>
+          <property name="font">
+           <font>
+            <family>Arial</family>
+            <pointsize>8</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>**R**</string>
+          </property>
+          <property name="textFormat">
+           <enum>Qt::MarkdownText</enum>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="1">
+         <widget class="QLabel" name="axialP_label">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>20</height>
+           </size>
+          </property>
+          <property name="palette">
+           <palette>
+            <active>
+             <colorrole role="WindowText">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>171</red>
+                <green>171</green>
+                <blue>171</blue>
+               </color>
+              </brush>
+             </colorrole>
+            </active>
+            <inactive>
+             <colorrole role="WindowText">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>171</red>
+                <green>171</green>
+                <blue>171</blue>
+               </color>
+              </brush>
+             </colorrole>
+            </inactive>
+            <disabled>
+             <colorrole role="WindowText">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>120</red>
+                <green>120</green>
+                <blue>120</blue>
+               </color>
+              </brush>
+             </colorrole>
+            </disabled>
+           </palette>
+          </property>
+          <property name="font">
+           <font>
+            <family>Arial</family>
+            <pointsize>8</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>**P**</string>
+          </property>
+          <property name="textFormat">
+           <enum>Qt::MarkdownText</enum>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignHCenter|Qt::AlignTop</set>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QGraphicsView" name="axial_view">
+          <property name="minimumSize">
+           <size>
+            <width>400</width>
+            <height>400</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>400</width>
+            <height>400</height>
+           </size>
+          </property>
+          <property name="palette">
+           <palette>
+            <active>
+             <colorrole role="Base">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>0</red>
+                <green>0</green>
+                <blue>0</blue>
+               </color>
+              </brush>
+             </colorrole>
+            </active>
+            <inactive>
+             <colorrole role="Base">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>0</red>
+                <green>0</green>
+                <blue>0</blue>
+               </color>
+              </brush>
+             </colorrole>
+            </inactive>
+            <disabled>
+             <colorrole role="Base">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>0</red>
+                <green>0</green>
+                <blue>0</blue>
+               </color>
+              </brush>
+             </colorrole>
+            </disabled>
+           </palette>
+          </property>
+          <property name="lineWidth">
+           <number>0</number>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item row="0" column="1">
+       <widget class="QLabel" name="axial_label">
+        <property name="font">
+         <font>
+          <family>Arial</family>
+         </font>
+        </property>
+        <property name="text">
+         <string>**Axial**</string>
+        </property>
+        <property name="textFormat">
+         <enum>Qt::MarkdownText</enum>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="2">
+       <layout class="QGridLayout" name="gridLayout_3">
+        <property name="spacing">
+         <number>6</number>
+        </property>
+        <item row="1" column="0">
+         <widget class="QLabel" name="coronalL_label">
+          <property name="minimumSize">
+           <size>
+            <width>20</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="palette">
+           <palette>
+            <active>
+             <colorrole role="WindowText">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>171</red>
+                <green>171</green>
+                <blue>171</blue>
+               </color>
+              </brush>
+             </colorrole>
+            </active>
+            <inactive>
+             <colorrole role="WindowText">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>171</red>
+                <green>171</green>
+                <blue>171</blue>
+               </color>
+              </brush>
+             </colorrole>
+            </inactive>
+            <disabled>
+             <colorrole role="WindowText">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>120</red>
+                <green>120</green>
+                <blue>120</blue>
+               </color>
+              </brush>
+             </colorrole>
+            </disabled>
+           </palette>
+          </property>
+          <property name="font">
+           <font>
+            <family>Arial</family>
+            <pointsize>8</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>**L**</string>
+          </property>
+          <property name="textFormat">
+           <enum>Qt::MarkdownText</enum>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QLabel" name="coronalS_label">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>20</height>
+           </size>
+          </property>
+          <property name="palette">
+           <palette>
+            <active>
+             <colorrole role="WindowText">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>171</red>
+                <green>171</green>
+                <blue>171</blue>
+               </color>
+              </brush>
+             </colorrole>
+            </active>
+            <inactive>
+             <colorrole role="WindowText">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>171</red>
+                <green>171</green>
+                <blue>171</blue>
+               </color>
+              </brush>
+             </colorrole>
+            </inactive>
+            <disabled>
+             <colorrole role="WindowText">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>120</red>
+                <green>120</green>
+                <blue>120</blue>
+               </color>
+              </brush>
+             </colorrole>
+            </disabled>
+           </palette>
+          </property>
+          <property name="font">
+           <font>
+            <family>Arial</family>
+            <pointsize>8</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>**S**</string>
+          </property>
+          <property name="textFormat">
+           <enum>Qt::MarkdownText</enum>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignBottom|Qt::AlignHCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="2">
+         <widget class="QLabel" name="coronalR_label">
+          <property name="minimumSize">
+           <size>
+            <width>20</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="palette">
+           <palette>
+            <active>
+             <colorrole role="WindowText">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>171</red>
+                <green>171</green>
+                <blue>171</blue>
+               </color>
+              </brush>
+             </colorrole>
+            </active>
+            <inactive>
+             <colorrole role="WindowText">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>171</red>
+                <green>171</green>
+                <blue>171</blue>
+               </color>
+              </brush>
+             </colorrole>
+            </inactive>
+            <disabled>
+             <colorrole role="WindowText">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>120</red>
+                <green>120</green>
+                <blue>120</blue>
+               </color>
+              </brush>
+             </colorrole>
+            </disabled>
+           </palette>
+          </property>
+          <property name="font">
+           <font>
+            <family>Arial</family>
+            <pointsize>8</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>**R**</string>
+          </property>
+          <property name="textFormat">
+           <enum>Qt::MarkdownText</enum>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="1">
+         <widget class="QLabel" name="coronalI_label">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>20</height>
+           </size>
+          </property>
+          <property name="palette">
+           <palette>
+            <active>
+             <colorrole role="WindowText">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>171</red>
+                <green>171</green>
+                <blue>171</blue>
+               </color>
+              </brush>
+             </colorrole>
+            </active>
+            <inactive>
+             <colorrole role="WindowText">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>171</red>
+                <green>171</green>
+                <blue>171</blue>
+               </color>
+              </brush>
+             </colorrole>
+            </inactive>
+            <disabled>
+             <colorrole role="WindowText">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>120</red>
+                <green>120</green>
+                <blue>120</blue>
+               </color>
+              </brush>
+             </colorrole>
+            </disabled>
+           </palette>
+          </property>
+          <property name="font">
+           <font>
+            <family>Arial</family>
+            <pointsize>8</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>**I**</string>
+          </property>
+          <property name="textFormat">
+           <enum>Qt::MarkdownText</enum>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignHCenter|Qt::AlignTop</set>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QGraphicsView" name="coronal_view">
+          <property name="minimumSize">
+           <size>
+            <width>400</width>
+            <height>400</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>400</width>
+            <height>400</height>
+           </size>
+          </property>
+          <property name="palette">
+           <palette>
+            <active>
+             <colorrole role="Base">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>0</red>
+                <green>0</green>
+                <blue>0</blue>
+               </color>
+              </brush>
+             </colorrole>
+            </active>
+            <inactive>
+             <colorrole role="Base">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>0</red>
+                <green>0</green>
+                <blue>0</blue>
+               </color>
+              </brush>
+             </colorrole>
+            </inactive>
+            <disabled>
+             <colorrole role="Base">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>0</red>
+                <green>0</green>
+                <blue>0</blue>
+               </color>
+              </brush>
+             </colorrole>
+            </disabled>
+           </palette>
+          </property>
+          <property name="lineWidth">
+           <number>0</number>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item row="0" column="2">
+       <widget class="QLabel" name="coronal_label">
+        <property name="font">
+         <font>
+          <family>Arial</family>
+         </font>
+        </property>
+        <property name="text">
+         <string>**Coronal**</string>
+        </property>
+        <property name="textFormat">
+         <enum>Qt::MarkdownText</enum>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="QLabel" name="sagittal_label">
+        <property name="font">
+         <font>
+          <family>Arial</family>
+         </font>
+        </property>
+        <property name="text">
+         <string>**Sagittal**</string>
+        </property>
+        <property name="textFormat">
+         <enum>Qt::MarkdownText</enum>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="1" column="0">
+    <widget class="QFrame" name="controller_frame">
+     <property name="minimumSize">
+      <size>
+       <width>300</width>
+       <height>300</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>400</width>
+       <height>600</height>
+      </size>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <widget class="QGroupBox" name="slicecontrol_pane">
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>400</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Arial</family>
+          <pointsize>8</pointsize>
+         </font>
+        </property>
+        <property name="title">
+         <string>Slice Control Pane</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_5">
+         <item row="0" column="0">
+          <widget class="QLabel" name="xaxis_label">
+           <property name="font">
+            <font>
+             <family>Arial</family>
+             <pointsize>8</pointsize>
+             <weight>50</weight>
+             <bold>false</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>x</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QSlider" name="xaxis_slider">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="2">
+          <widget class="QSpinBox" name="xaxis_spinbox"/>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="yaxis_label">
+           <property name="font">
+            <font>
+             <family>Arial</family>
+             <pointsize>8</pointsize>
+             <weight>50</weight>
+             <bold>false</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>y</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QSlider" name="yaxis_slider">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="2">
+          <widget class="QSpinBox" name="yaxis_spinbox"/>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLabel" name="zaxis_label">
+           <property name="font">
+            <font>
+             <family>Arial</family>
+             <pointsize>8</pointsize>
+             <weight>50</weight>
+             <bold>false</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>z</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="QSlider" name="zaxis_slider">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="2">
+          <widget class="QSpinBox" name="zaxis_spinbox"/>
+         </item>
+         <item row="3" column="0">
+          <widget class="QLabel" name="frame_label">
+           <property name="font">
+            <font>
+             <family>Arial</family>
+             <pointsize>8</pointsize>
+             <weight>50</weight>
+             <bold>false</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>Frame</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="1">
+          <widget class="QSlider" name="frame_slider">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="2">
+          <widget class="QSpinBox" name="frame_spinbox"/>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="1" column="1">
+    <widget class="QFrame" name="graph_frame">
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>300</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>4000</height>
+      </size>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QGraphicsView" name="graph_view">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>600</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QGroupBox" name="graphcontrol_pane">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>300</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>300</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Arial</family>
+          <pointsize>8</pointsize>
+         </font>
+        </property>
+        <property name="title">
+         <string>Graph Control Pane</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_7">
+         <item row="3" column="0">
+          <widget class="QPushButton" name="addmask_button">
+           <property name="minimumSize">
+            <size>
+             <width>30</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>30</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <family>Arial</family>
+             <pointsize>8</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>+</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="1">
+          <widget class="QPushButton" name="removemask_button">
+           <property name="minimumSize">
+            <size>
+             <width>30</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>30</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <family>Arial</family>
+             <pointsize>8</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>-</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="0" colspan="5">
+          <widget class="QListView" name="mask_listview"/>
+         </item>
+         <item row="3" column="4">
+          <widget class="QPushButton" name="savepng_button">
+           <property name="font">
+            <font>
+             <family>Arial</family>
+             <pointsize>8</pointsize>
+            </font>
+           </property>
+           <property name="text">
+            <string>Save to png</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="3">
+          <widget class="QPushButton" name="savecsv_button">
+           <property name="font">
+            <font>
+             <family>Arial</family>
+             <pointsize>8</pointsize>
+            </font>
+           </property>
+           <property name="text">
+            <string>Save to csv</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
