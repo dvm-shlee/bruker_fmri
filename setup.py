@@ -28,10 +28,10 @@ setup(name='bruker-fmri',
                         'shleeh',
                         'bruker',
                         'PySide2',
-                        'pyqtgraph'],
+                        'pyqtgraph==0.11.0rc0'],
       entry_points={
           'console_scripts': [
-              'brk-fmri=brkfmri.gui.main_win:main',
+              'brk-fmri=brkfmri.scripts.brk-fmri:main',
           ],
       },
       classifiers=[
