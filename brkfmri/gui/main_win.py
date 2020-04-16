@@ -2,7 +2,7 @@ from .. import __version__
 from .icons import icon_sets
 from .browser import DataBrowserMain
 from .toolbars.select_scan import ScanSelectDialog
-from .io import HomeDirDialog, PvDatasetFileDialog
+from .loader import HomeDirDialog, PvDatasetFileDialog
 from ..config import set_geometry, get_geometry, set_home_dir, get_home_dir
 import sys
 from PySide2 import QtWidgets, QtGui, QtCore
@@ -16,25 +16,25 @@ class MainWindow(QtWidgets.QMainWindow):
         super(MainWindow, self).__init__()
         self.brkraw_obj = None
         self.scanlist = None
-        self.init_ui()
-        self.set_statusbar()
-        self.set_actions()
-        self.set_menubar()
-        self.set_toolbar()
-        self.set_centerwidget()
+        self._init_window()
+        self._init_statusbar()
+        self._init_actions()
+        self._init_menubar()
+        self._init_toolbar()
+        self._init_centerwidget()
         self.set_geometry()
         self.show()
 
-    def init_ui(self):
+    def _init_window(self):
         self.setWindowTitle('Bruker-fMRI v{} - CAMRI at UNC-CH'.format(__version__))
         self.setWindowIcon(QtGui.QIcon(icon_sets['win_icon']))
         self.setObjectName('main_window')
 
     # initiate environments
-    def set_statusbar(self):
+    def _init_statusbar(self):
         self.statusBar().showMessage('Ready')
 
-    def set_actions(self):
+    def _init_actions(self):
         # File
         self.exit_action = QtWidgets.QAction(QtGui.QIcon(icon_sets['file_exit']),
                                              'Exit', self)
@@ -85,7 +85,7 @@ class MainWindow(QtWidgets.QMainWindow):
         self.movecenter_action.setStatusTip('Move window to screen center')
         self.movecenter_action.triggered.connect(self.movecenter)
 
-    def set_menubar(self):
+    def _init_menubar(self):
         self.menubar = self.menuBar()
         self.menubar.setNativeMenuBar(False)
         self.filemenu = self.menubar.addMenu('&File')
@@ -117,7 +117,7 @@ class MainWindow(QtWidgets.QMainWindow):
 
         # load data
         dataobj = self.brkraw_obj.get_dataobj(scan_id, reco_id)
-        # affine = self.brkraw_obj.get_affine(scan_id, reco_id)
+        affine = self.brkraw_obj.get_affine(scan_id, reco_id)
         visu_pars = self.brkraw_obj.get_visu_pars(scan_id, reco_id)
         resol = self.brkraw_obj._get_spatial_info(visu_pars)['spatial_resol'][0]
         # fov = self.brkraw_obj._get_spatial_info(visu_pars)['fov_size']
@@ -131,10 +131,10 @@ class MainWindow(QtWidgets.QMainWindow):
             is_localizer = False
 
         # deliver to data browser
-        delivery_package = [dataobj, resol, tr, is_localizer]
-        self.dataSelected.emit(delivery_package)
+        delivery_package = [dataobj, affine, resol, tr, is_localizer]
+        self.dataSelected.emit(delivery_package)  # this will transmit to browser widget
 
-    def set_toolbar(self):
+    def _init_toolbar(self):
         file_toolbar = self.addToolBar('File')
         file_toolbar.addAction(self.exit_action)
         file_toolbar.addAction(self.dfpath_action)
@@ -145,7 +145,7 @@ class MainWindow(QtWidgets.QMainWindow):
         data_toolbar.addAction(self.scanlist_action)
         data_toolbar.addAction(self.analysis_action)
 
-    def set_centerwidget(self):
+    def _init_centerwidget(self):
         self.browser = DataBrowserMain(self)
         self.setCentralWidget(self.browser)
         self.browser.adjustSize()

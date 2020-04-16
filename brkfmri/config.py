@@ -103,7 +103,4 @@ def set_home_dir(path):
     save_config_file(config, cfg_path)
 
 
-if __name__ == '__main__':
-    pass
-else:
-    config = load_cfg()
+config = load_cfg()

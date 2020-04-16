@@ -8,7 +8,7 @@ import pyqtgraph as pg
 import numpy as np
 from ..lib.utils import convert_arr2qpixmap, popup_error_dialog
 from shleeh.errors import *
-from .viewer.sliceviewer import ImageViewer
+from .viewer.sliceviewer import SliceViewer
 
 
 class DataBrowserMain(QWidget):
@@ -55,31 +55,31 @@ class DataBrowserMain(QWidget):
 
         self.connect_sliders_to_update()
 
-    def axialview_pointing_event(self, pos_x, pos_y, meta):
-        max_x = self.zaxis_slider.maximum()
-        max_y = self.yaxis_slider.maximum()
-
-        # print(pos_x, pos_y, max_x, max_y)
-        self.zaxis_slider.setValue(int(max_x * pos_x))
-        self.yaxis_slider.setValue(int(max_y * pos_y))
-        # print(int(max_x * pos_x), int(max_y * pos_y))
-
     def sagittalview_pointing_event(self, pos_x, pos_y, meta):
-        max_x = self.zaxis_slider.maximum()
-        max_y = self.xaxis_slider.maximum()
+        max_x = self.yaxis_slider.maximum()
+        max_y = self.zaxis_slider.maximum()
 
         # print(pos_x, pos_y, max_x, max_y)
-        self.zaxis_slider.setValue(int(max_x * pos_x))
-        self.xaxis_slider.setValue(max_y - int(max_y * pos_y))
+        self.yaxis_slider.setValue(int(max_x * pos_x))
+        self.zaxis_slider.setValue(max_y - int(max_y * pos_y))
         # print(int(max_x * pos_x), int(max_y * pos_y))
 
-    def coronalview_pointing_event(self, pos_x, pos_y, meta):
+    def axialview_pointing_event(self, pos_x, pos_y, meta):
         max_x = self.yaxis_slider.maximum()
         max_y = self.xaxis_slider.maximum()
 
         # print(pos_x, pos_y, max_x, max_y)
         self.yaxis_slider.setValue(int(max_x * pos_x))
-        self.xaxis_slider.setValue(max_y - int(max_y * pos_y))
+        self.xaxis_slider.setValue(int(max_y * pos_y))
+        # print(int(max_x * pos_x), int(max_y * pos_y))
+
+    def coronalview_pointing_event(self, pos_x, pos_y, meta):
+        max_x = self.xaxis_slider.maximum()
+        max_y = self.zaxis_slider.maximum()
+
+        # print(pos_x, pos_y, max_x, max_y)
+        self.xaxis_slider.setValue(int(max_x * pos_x))
+        self.zaxis_slider.setValue(max_y - int(max_y * pos_y))
         # print(int(max_x * pos_x), int(max_y * pos_y))
 
     def sliderChangeEvent(self):
@@ -113,21 +113,17 @@ class DataBrowserMain(QWidget):
         else:
             dataobj = self.selectedScan[...]
 
-        data_xy = self.slice_data(dataobj, 'axial', x)
-        data_yz = self.slice_data(dataobj, 'sagittal', y)
-        data_xz = self.slice_data(dataobj, 'coronal', z)
+        data_xy = self.slice_data(dataobj, 'axial', z)
+        data_yz = self.slice_data(dataobj, 'sagittal', x)
+        data_xz = self.slice_data(dataobj, 'coronal', y)
         ratio_xy, ratio_yz, ratio_xz = self.ratio_container
+        # ratio_xy, ratio_yz, ratio_xz = 1, 1, 1
 
         qm_xy = convert_arr2qpixmap(data_xy, ratio_xy)
         qm_yz = convert_arr2qpixmap(data_yz, ratio_yz)
         qm_xz = convert_arr2qpixmap(data_xz, ratio_xz)
 
-        if self.axial_view._overlay is not None:
-            overlay = self.axial_view._overlay_item.pixmap()
-            self.axial_view.setPixmap(qm_xy)
-            self.axial_view._overlay_item.setPixmap(overlay)
-        else:
-            self.axial_view.setPixmap(qm_xy)
+        self.axial_view.setPixmap(qm_xy)
         self.sagittal_view.setPixmap(qm_yz)
         self.coronal_view.setPixmap(qm_xz)
 
@@ -136,21 +132,26 @@ class DataBrowserMain(QWidget):
         self.axial_view.setEnabled(True)
         self.sagittal_view.setEnabled(True)
         self.coronal_view.setEnabled(True)
-        self.selectedScan, resol, self.selectedScanTR, is_localizer = delivery_package
+        self.selectedScan, affine, resol, self.selectedScanTR, is_localizer = delivery_package
         self.selectedScanTR /= 1000
 
+        from shleeh.imgman import reorient_to_ras, determine_slice_plane
+        slice_plane_ref = dict(sagittal=0, coronal=1, axial=2)
+
         if is_localizer:
-            # localizer will show on each view
-            data_xy = self.selectedScan[..., 0]
-            data_yz = self.selectedScan[..., 1]
-            data_xz = self.selectedScan[..., 2]
-            self.ratio_container = [1.0, 1.0, 1.0]
+            img_container = dict()
+            for i, aff in enumerate(affine):
+                size = config.get('ImageViewer', 'size')
+                data = self.selectedScan[..., i]
+                slice_plane=determine_slice_plane(2, aff, resol)
+                ras_data, ras_resol = reorient_to_ras(data[:,:,np.newaxis], aff, resol)
+                slice_axis = slice_plane_ref[slice_plane]
+                ras_data = ras_data.mean(slice_axis)
+                ras_resol = np.delete(ras_resol, slice_axis)
+                qpixmap = convert_arr2qpixmap(ras_data, ras_resol, size)
+                img_container[slice_plane] = qpixmap
 
-            qm_xy = convert_arr2qpixmap(data_xy, self.ratio_container[0])
-            qm_yz = convert_arr2qpixmap(data_yz, self.ratio_container[1])
-            qm_xz = convert_arr2qpixmap(data_xz, self.ratio_container[2])
-
-            self.update_axisview(qm_xy, qm_yz, qm_xz)
+            self.update_axisview(img_container)
         else:
             # other than localizer
             self.init_data(self.selectedScan)
@@ -218,10 +219,14 @@ class DataBrowserMain(QWidget):
             self.frame_slider.setRange(0, size_frame-1)
             self.frame_spinbox.setRange(0, size_frame-1)
 
-    def update_axisview(self, axial_img, sagittal_img, coronal_img):
-        self.axial_view.setPixmap(axial_img)
-        self.sagittal_view.setPixmap(sagittal_img)
-        self.coronal_view.setPixmap(coronal_img)
+    def update_axisview(self, img_container: dict):
+        for view_plane, pixmap in img_container.items():
+            if view_plane == 'axial':
+                self.axial_view.setPixmap(pixmap)
+            elif view_plane == 'sagittal':
+                self.sagittal_view.setPixmap(pixmap)
+            else:
+                self.coronal_view.setPixmap(pixmap)
 
     def inactivate_widgets(self):
         self.slicecontrol_pane.setDisabled(True)
@@ -245,11 +250,11 @@ class DataBrowserMain(QWidget):
 
     def set_viewer_frame(self):
         self.imageframe = QFrame(self)
-        self.axial_view = ImageViewer(self.imageframe)
+        self.axial_view = SliceViewer(self.imageframe)
         self.axial_view.setDisabled(True)
-        self.sagittal_view = ImageViewer(self.imageframe)
+        self.sagittal_view = SliceViewer(self.imageframe)
         self.sagittal_view.setDisabled(True)
-        self.coronal_view = ImageViewer(self.imageframe)
+        self.coronal_view = SliceViewer(self.imageframe)
         self.coronal_view.setDisabled(True)
 
         # TODO: Will reactivate these on later version

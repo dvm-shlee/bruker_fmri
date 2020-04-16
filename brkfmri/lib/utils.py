@@ -1,25 +1,44 @@
-from ..config import config
 from PySide2 import QtWidgets, QtGui, QtCore
 from PIL import Image, ImageQt
 import numpy as np
 from shleeh.errors import *
 
 
-def convert_arr2qpixmap(data: np.array, aspect: float = 1.0) -> QtGui.QPixmap:
-    size = int(config.get('ImageViewer', 'size'))
-    rescaled_data = data / data.max()* 255
+class Pixmap(QtGui.QPixmap):
+    def __init__(self, *args, **kwargs):
+        super(Pixmap, self).__init__(*args, **kwargs)
+
+
+def convert_arr2qpixmap(data: np.array, resol: [float, float], size: int) -> QtGui.QPixmap:
+    """ convert 2D numpy array to PySide2's QPixmap object
+
+    Args:
+        data    : 2d array
+        resol   : resolution for each axis
+        size    : size of longest axis
+
+    Returns:
+        QPixmap object
+        aspect_ratio ( width / height )
+    """
+    fov_size = (np.asarray(data.shape) * np.asarray(resol)).tolist()
+    size = float(size)
+    aspect_ratio = float(np.divide(*fov_size))
+
+    rescaled_data = data / data.max() * 255
     rescaled_data = rescaled_data.astype('uint8')
     imgobj = Image.fromarray(rescaled_data.T)
     qimgobj = ImageQt.ImageQt(imgobj)
     qpixmap = QtGui.QPixmap(qimgobj)
 
-    if aspect > 1:  # aspect = width / height
-        width = size
-        height = size / aspect
-    else:
-        width = size * aspect
+    if aspect_ratio > 1:  # height is longer
+        width = size / aspect_ratio
         height = size
-    qpixmap = qpixmap.scaled(QtCore.QSize(width, height))
+    else:  # equal or width is longer
+        width = size
+        height = size * aspect_ratio
+    qpixmap = qpixmap.scaled(QtCore.QSize(width, height),
+                             aspectMode=QtCore.Qt.KeepAspectRatio)
     return qpixmap
 
 

@@ -28,7 +28,7 @@ setup(name='bruker-fmri',
                         'shleeh',
                         'bruker',
                         'PySide2',
-                        'pyqtgraph==0.11.0rc0'],
+                        'pyqtgraph==0.11.0rc0', 'scipy'],
       entry_points={
           'console_scripts': [
               'brk-fmri=brkfmri.scripts.brkfmri:main',
@@ -48,4 +48,4 @@ setup(name='bruker-fmri',
           'Topic :: Scientific/Engineering :: Medical Science Apps.',
       ],
       keywords = 'bruker data_handler converter administrator_tool'
-     )
+      )
