@@ -3,7 +3,7 @@ from PySide2.QtCore import Qt, QSize, QMetaObject, Signal, QTimer
 from PySide2.QtGui import QPalette, QBrush, QColor, QFont
 from PySide2.QtWidgets import \
     QWidget, QGridLayout, QFrame, QLabel, QVBoxLayout, \
-    QHBoxLayout, QGroupBox, QSlider, QSpinBox, QPushButton, QListView
+    QHBoxLayout, QGroupBox, QSlider, QSpinBox
 import pyqtgraph as pg
 import numpy as np
 from ..lib.utils import convert_arr2qpixmap, popup_error_dialog
@@ -135,7 +135,7 @@ class DataBrowserMain(QWidget):
         self.selectedScan, affine, resol, self.selectedScanTR, is_localizer = delivery_package
         self.selectedScanTR /= 1000
 
-        from shleeh.imgman import reorient_to_ras, determine_slice_plane
+        from slfmri.imgman import reorient_to_ras, determine_slice_plane
         slice_plane_ref = dict(sagittal=0, coronal=1, axial=2)
 
         if is_localizer:
